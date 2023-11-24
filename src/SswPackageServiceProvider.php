@@ -16,7 +16,7 @@ class SswPackageServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('ssw-package')
+            ->name('ssw-package-local')
             ->hasConfigFile();
             #->hasViews()
             #->hasMigration('create_ssw-package-local_table')
