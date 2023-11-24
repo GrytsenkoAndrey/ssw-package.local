@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace SmartSellWeb\SswPackage\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class SswPackageCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'ssw-package-local';
 
     public $description = 'My command';
 
