@@ -15,7 +15,7 @@ class CheckJWTSignatureMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        list($base64UrlHeader, $base64UrlPayload, $receivedSignature) = explode('.', $request?->header('token'));
+        list($base64UrlHeader, $base64UrlPayload, $receivedSignature) = explode('.', $request->header('token'));
 
         $secret = config('ssw-package-local.jwt.secret');
         $signature = hash_hmac('sha256', $base64UrlHeader . "." . $base64UrlPayload, $secret, true);
