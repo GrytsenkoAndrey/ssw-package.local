@@ -2,9 +2,9 @@
 
 namespace SmartSellWeb\SswPackage;
 
+use SmartSellWeb\SswPackage\Commands\SswPackageCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use SmartSellWeb\SswPackage\Commands\SswPackageCommand;
 
 class SswPackageServiceProvider extends PackageServiceProvider
 {
@@ -18,8 +18,8 @@ class SswPackageServiceProvider extends PackageServiceProvider
         $package
             ->name('ssw-package-local')
             ->hasConfigFile();
-            #->hasViews()
-            #->hasMigration('create_ssw-package-local_table')
-            #->hasCommand(SswPackageCommand::class);
+        //->hasViews()
+        //->hasMigration('create_ssw-package-local_table')
+        //->hasCommand(SswPackageCommand::class);
     }
 }
