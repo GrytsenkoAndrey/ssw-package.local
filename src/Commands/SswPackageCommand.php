@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 
 class SswPackageCommand extends Command
 {
-    public $signature = 'ssw-package-local';
+    public $signature = 'ssw-package';
 
     public $description = 'My command';
 
