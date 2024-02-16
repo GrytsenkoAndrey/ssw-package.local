@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace SmartSellWeb\SswPackage\Abstracts;
@@ -21,7 +22,7 @@ abstract class QueryFilter
         foreach ($this->fields() as $field => $value) {
             $method = ucwords($field);
             if (method_exists($this, $method)) {
-                call_user_func_array([$this, $method], (array)$value);
+                call_user_func_array([$this, $method], (array) $value);
             }
         }
     }

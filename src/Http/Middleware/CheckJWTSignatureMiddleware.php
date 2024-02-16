@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CheckJWTSignatureMiddleware
 {
-    function __construct(private CheckJWTSignatureService $checkJWTSignature)
+    public function __construct(private CheckJWTSignatureService $checkJWTSignature)
     {
     }
 
@@ -22,7 +22,7 @@ class CheckJWTSignatureMiddleware
     {
         $token = $request->header('token');
 
-        if(!$token) {
+        if (! $token) {
             return response()->json(['message' => 'JVT token was not found in the request headers'], Response::HTTP_UNAUTHORIZED);
         }
 

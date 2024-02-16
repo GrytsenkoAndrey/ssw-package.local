@@ -8,19 +8,17 @@ class CheckJWTSignatureService
 {
     /**
      * Check JWT token signature.
-     *
-     * @param string $token
-     * @return bool
      */
     public function handle(string $token): bool
     {
-        list($base64UrlHeader, $base64UrlPayload, $receivedSignature) = explode('.', $token);
+        [$base64UrlHeader, $base64UrlPayload, $receivedSignature] = explode('.', $token);
         $secret = config('ssw-package-local.jwt.secret');
-        $signature = hash_hmac('sha256', $base64UrlHeader . "." . $base64UrlPayload, $secret, true);
+        $signature = hash_hmac('sha256', $base64UrlHeader.'.'.$base64UrlPayload, $secret, true);
         $base64UrlSignature = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($signature));
         if ($base64UrlSignature !== $receivedSignature) {
             return false;
         }
+
         return true;
     }
 }
